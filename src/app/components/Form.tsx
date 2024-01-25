@@ -2,9 +2,10 @@ import React from 'react'
 
 export default function Form() {
   return (
-    <form className='mt-20 flex justify-between'>
-        <div>
-            <select name="" id="" className='border-2 border-black rounded-sm p-2' >
+    <form className='mt-20'>
+        <div className=' flex justify-between'>
+        <div className='border-2 border-black rounded-md bg-black'>
+            <select name="" id="" className='bg-black text-white rounded-sm p-2' >
                 <option value="None">Select Job Category</option>
                 <option value="Agricultural">Agricultural</option>
                 <option value="Housekeeping">Housekeeping </option>
@@ -24,8 +25,8 @@ export default function Form() {
             </select>
         </div>
 
-        <div>
-            <select name="" id="" className='border-2 border-black rounded-sm p-2'>
+        <div className='border-2 border-black rounded-md bg-black'>
+            <select name="" id="" className='bg-black text-white rounded-sm p-2'>
                 <option value="None">Select Country</option>
                 <option value="101165590">United Kingdom</option>
                 <option value="101452733">Australia</option>
@@ -35,14 +36,23 @@ export default function Form() {
             </select>
         </div>
 
-        <div>
-            <select name="" id="" className='border-2 border-black rounded-sm p-2'>
+        <div className='border-2 border-black rounded-md bg-black '>
+            <select name="" id="" className='p-2 rounded-md bg-black text-white'>
                 <option value="None">Sort By</option>
                 <option value="mostRelevant">Most Relevant</option>
                 <option value="mostResent">Most Resent</option>
                 
             </select>
         </div>
+
+        <div >
+            <input type="number"  placeholder='0'  className='placeholder:text-black border-2 border-black p-2 rounded-md pr-4' />
+        </div>
+        </div>
+
+        <div className='mt-10 flex justify-center'>
+            <button type='submit' className='bg-blue-500 text-white px-8 py-2 rounded-md font-bold'>Fetch Jobs</button>
+        </div> 
     </form>
   )
 }
