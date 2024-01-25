@@ -7,7 +7,7 @@ export default function AllJobs() {
     <div className="mt-10">
       <h1 className="text-center font-bold text-3xl">All Jobs</h1>
 
-      <div className="pt-10 grid grid-cols-4 gap-10">
+      <div className="pt-10 grid grid-cols-1 md:grid-cols-4 gap-10">
         {jobList.map((job, index) => {
           return (
             <div className="shadow-md p-4 flex flex-col gap-2">

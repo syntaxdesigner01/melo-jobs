@@ -3,7 +3,7 @@ import React from 'react'
 export default function Form() {
   return (
     <form className='mt-20'>
-        <div className=' flex justify-between'>
+        <div className=' flex flex-col gap-5 md:flex-row md:justify-evenly'>
         <div className='border-2 border-black rounded-md bg-black'>
             <select name="" id="" className='bg-black text-white rounded-sm p-2' >
                 <option value="None">Select Job Category</option>
@@ -40,14 +40,14 @@ export default function Form() {
             <select name="" id="" className='p-2 rounded-md bg-black text-white'>
                 <option value="None">Sort By</option>
                 <option value="mostRelevant">Most Relevant</option>
-                <option value="mostResent">Most Resent</option>
+                <option value="mostRecent">Most Recent</option>
                 
             </select>
         </div>
 
-        <div >
+        {/* <div >
             <input type="number"  placeholder='0'  className='placeholder:text-black border-2 border-black p-2 rounded-md pr-4' />
-        </div>
+        </div> */}
         </div>
 
         <div className='mt-10 flex justify-center'>

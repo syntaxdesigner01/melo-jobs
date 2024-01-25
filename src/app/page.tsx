@@ -1,5 +1,5 @@
-import AllJobs from "./components/AllJobs";
-import Form from "./components/Form";
+import AllJobs from "../components/AllJobs";
+import Form from "../components/Form";
 
 
 export default function page() {
