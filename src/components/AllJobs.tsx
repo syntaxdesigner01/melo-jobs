@@ -18,9 +18,9 @@ export default function AllJobs() {
      }
 
       <div className="pt-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {jobList?.map((job:dataReturn, index:number) => {
+        {jobList?.data?.map((job:dataReturn, index:number) => {
           return (
-            <div className="shadow-md p-4 flex flex-col gap-2">
+            <div key={index} className="shadow-md p-4 flex flex-col gap-2">
               <Image
                 src={job?.company?.logo}
                 alt="logo"
