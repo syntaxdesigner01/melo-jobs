@@ -1,12 +1,7 @@
-import AllJobs from "../components/AllJobs";
-import Form from "../components/Form";
-
+import React from 'react'
 
 export default function page() {
   return (
-    <main className="px-10">
-      <Form/>
-      <AllJobs/>
-    </main>
+    <div>page</div>
   )
 }
