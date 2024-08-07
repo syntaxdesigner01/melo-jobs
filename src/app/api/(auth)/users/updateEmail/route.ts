@@ -78,7 +78,7 @@ export const DELETE = async (request: Request) => {
             return new NextResponse(JSON.stringify({ message: 'User not deleted', status: 404 }))
         }
 
-        return new NextResponse(JSON.stringify({ message: 'deleted successfully', status: 200 }))
+        return new NextResponse(JSON.stringify({ message: 'deleted successfully', user: deleteUser }), {status: 200})
 
     } catch (error: any) {
         return new NextResponse(JSON.stringify({ message: 'Error ' + error, status: 500 }))
