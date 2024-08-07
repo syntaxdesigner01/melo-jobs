@@ -44,10 +44,43 @@ export const PATCH = async (request: Request) => {
         return new NextResponse(
             JSON.stringify({ message: 'User updated successfully', status: 200 })
         );
-    } catch (error:any) {
+    } catch (error: any) {
         // Handle errors
         return new NextResponse(
             JSON.stringify({ message: `Error updating user: ${error.message}`, status: 500 })
         );
     }
 };
+
+
+// getting user Id from the search param
+
+export const DELETE = async (request: Request) => {
+    try {
+        const { searchParams } = new URL(request.url)
+        const userId = searchParams.get('userId')
+        await connect()
+
+
+        if (!userId) {
+            return new NextResponse(JSON.stringify({ message: 'No user id passed', status: 400 }))
+        }
+
+        if (!Types.ObjectId.isValid(userId)) {
+            return new NextResponse(JSON.stringify({ message: 'Invalid user Id', status: 400 }))
+        }
+
+
+
+        const deleteUser = await User.findByIdAndDelete(new Types.ObjectId(userId))
+
+        if (!deleteUser) {
+            return new NextResponse(JSON.stringify({ message: 'User not deleted', status: 404 }))
+        }
+
+        return new NextResponse(JSON.stringify({ message: 'deleted successfully', status: 200 }))
+
+    } catch (error: any) {
+        return new NextResponse(JSON.stringify({ message: 'Error ' + error, status: 500 }))
+    }
+}
